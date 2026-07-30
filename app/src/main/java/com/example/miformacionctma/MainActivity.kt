@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,6 +22,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             MiFormacionCTMATheme {
                 PantallaInicio()
@@ -30,6 +30,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
 fun PantallaInicio(nombre: String = "Aprendiz") {
     Column(
@@ -42,8 +43,18 @@ fun PantallaInicio(nombre: String = "Aprendiz") {
             text = "Mi Formación CTMA",
             style = MaterialTheme.typography.headlineMedium
         )
+
         Spacer(modifier = Modifier.height(12.dp))
+
         Text(text = "Hola, $nombre")
         Text(text = "Aquí organizarás actividades y evidencias.")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PantallaInicioPreview() {
+    MiFormacionCTMATheme {
+        PantallaInicio()
     }
 }
